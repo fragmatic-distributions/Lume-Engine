@@ -1,5 +1,2 @@
-﻿  Main.c
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Main.c(21,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'GLFWwindow *'
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Main.c(21,10): warning C4313: 'printf': '%d' in format string conflicts with argument 1 of type 'GLFWwindow *'
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Main.c(26,49): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'GLFWframebuffersizefun'
+﻿  Shader.cpp
   Lume-Engine.vcxproj -> C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\x64\Debug\Lume-Engine.exe

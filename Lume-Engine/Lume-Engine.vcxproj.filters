@@ -4,15 +4,51 @@
     <Filter Include="Source">
       <UniqueIdentifier>{416665d5-35f0-482b-b18a-d34c6a9c45ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Core">
+      <UniqueIdentifier>{6bb98c85-5ebd-4ab4-af1f-8c24fdd66579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Game">
+      <UniqueIdentifier>{c9111a4d-ab89-46e2-9007-300d7674a387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Shaders">
+      <UniqueIdentifier>{6310a64b-b55a-4ecb-95e2-4434fff51964}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.c">
+    <ClCompile Include="Glad.c" />
+    <ClCompile Include="Main.cpp">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main.h">
+    <ClInclude Include="Main.hpp">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Renderer.hpp">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.hpp">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Default.vert">
+      <Filter>Source\Shaders</Filter>
+    </None>
+    <None Include="Default.frag">
+      <Filter>Source\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,7 +1,9 @@
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 
 #include "Main.h"
+#include "Renderer.h"
 
 int main()
 {
@@ -18,20 +20,22 @@ int main()
 	
 	GLFWwindow* WindowInstance = glfwCreateWindow(900, 900, "Lume-Egnine", NULL, NULL);
 	if (!WindowInstance) {
-		printf("MAIN.C::WINDOW_CREATION:ERROR %d\n", WindowInstance);
+		printf("MAIN.C::WINDOW_CREATION:ERROR %s\n", WindowInstance ? "true" : "false");
 		return -2;
 	}
-
 	glfwMakeContextCurrent(WindowInstance);
 	glfwSetFramebufferSizeCallback(WindowInstance, GLFWFrameBufferSizeCallBack); //for screen sizing
 
+	// Initalize Glad
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		printf("MAIN.C::GLAD_INITIATION:ERROR");
+		return -1;
+	}
+
 	// Game Loop shit
 	while (!glfwWindowShouldClose(WindowInstance)) {
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
-		glfwSwapBuffers(WindowInstance);
-		glfwPollEvents();
+		RenderFrame(WindowInstance);
 	}
 	
 	glfwTerminate();
