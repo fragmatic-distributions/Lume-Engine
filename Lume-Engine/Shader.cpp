@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <glad/glad.h>
 #include <glm/glm.hpp>
-#include <typeinfo>
+#include <map>
 
 #include "Util.hpp"
 #include "Shader.hpp"
@@ -98,38 +98,84 @@ void Shader::Destroy() {
 	glDeleteProgram(this->ShaderProgramInstance);
 }
 
+// Gets all the uniforms
+/*-----------------------------------------------------------------------------------------------------------*/
+//void Shader::GetShaderUniforms() {
+//	GLint ShaderUniforms = -1;
+//	glGetProgramiv(this->ShaderProgramInstance, GL_ACTIVE_UNIFORMS, &ShaderUniforms);
+//
+//	for (int Increment = 0; Increment < ShaderUniforms; Increment++) {
+//		int UniformSize = 0;
+//		int UniformLength = 0;
+//		GLenum UniformEnum = GL_ZERO;
+//		char UniformName[100];
+//
+//		glGetActiveUniform(this->ShaderProgramInstance, Increment, sizeof(UniformName), &UniformLength, &UniformSize, &UniformEnum, UniformName);
+//		int ShaderUniformLocation = glGetUniformLocation(this->ShaderProgramInstance, UniformName);
+//
+//		this->ShaderUniforms[UniformName] = ShaderUniformLocation;
+//	}
+//}
+
 //█░░█ █▀▀▄ ░▀░ █▀▀ █▀▀█ █▀▀█ █▀▄▀█ █▀▀
 //█░░█ █░░█ ▀█▀ █▀▀ █░░█ █▄▄▀ █░▀░█ ▀▀█
 //░▀▀▀ ▀░░▀ ▀▀▀ ▀░░ ▀▀▀▀ ▀░▀▀ ▀░░░▀ ▀▀▀
 
-// Sets shader integer
+// TODO: find a better fuckign way of doing this
+// Cuz its a actual method of torture
+
+// Returns a shader uniform
 /*-----------------------------------------------------------------------------------------------------------*/
-void Shader::SetShaderUniform(const char* UniformName, Shader::Uniform Uniformtype, glm::vec4 UniformValue) {
+int Shader::GetShaderUniform(const char* UniformName, Shader::UniformType UniformType) {
 	int ShaderUniformLocation = glGetUniformLocation(this->ShaderProgramInstance, UniformName);
 	if (ShaderUniformLocation == -1) {
-		std::cout << "SHADER.CPP::SET_SHADER_UNIFORM::UNIFORM_INVALID::ERROR, GOT : " << UniformName << std::endl;
-		return;
+		std::cout << "SHADER.CPP::SET_SHADER_UNIFORM_ " << UniformType << "::UNIFORM_INVALID::ERROR, GOT : " << UniformName << std::endl;
+		return -1;
 	}
-
-	std::cout << ShaderUniformLocation << std::endl;
-	switch (Uniformtype) {
-		case SHADER_UNIFORM_INT:
-			glUniform1i(ShaderUniformLocation, UniformValue.x);
-			break;
-	//	case SHADER_UNIFORM_FLOAT:
-	//		glUniform1f(ShaderUniformLocation, UniformValue);
-	//		break;
-	//	case SHADER_UNIFORM_UINT:
-	//		glUniform1ui(ShaderUniformLocation, UniformValue);
-	//		break;
-	//	case SHADER_UNIFORM_VEC1:
-	//		glUniform1fv(ShaderUniformLocation, UniformValue);
-	//		break;
-		case SHADER_UNIFORM_VEC4:
-			std::cout << typeid(UniformValue).name() << std::endl;
-			glUniform4i(ShaderUniformLocation, UniformValue.x, UniformValue.y, UniformValue.z, UniformValue.w);
-			break;
-	}
+	return ShaderUniformLocation;
+}
+	
+ //Sets shader float
+void Shader::SetUniformFloat(const char* UniformName, const float UniformValue) {
+	int ShaderUniformLocation = this->GetShaderUniform(UniformName, this->SHADER_UNIFORM_FLOAT);
+	glUniform1f(ShaderUniformLocation, UniformValue);
 }
 
+// Set Shader Integer
+void Shader::SetUniformInt(const char* UniformName, const int UniformValue) {
+	int ShaderUniformLocation = this->GetShaderUniform(UniformName, this->SHADER_UNIFORM_INT);
+	glUniform1i(ShaderUniformLocation, UniformValue);
+}
 
+// Set Shader Unsigned int
+void Shader::SetUniformUint(const char* UniformName, const unsigned int UniformValue) {
+	int ShaderUniformLocation = this->GetShaderUniform(UniformName, this->SHADER_UNIFORM_UINT);
+	glUniform1ui(ShaderUniformLocation, UniformValue);
+}
+
+// Set Shader Integer Vector 1
+void Shader::SetUniformIntVec(const char* UniformName, const glm::ivec1 UniformValue) {
+	int ShaderUniformLocation = this->GetShaderUniform(UniformName, this->SHADER_UNIFORM_INTVEC1);
+	GLint Int[1] = { UniformValue.x };
+	glUniform1iv(ShaderUniformLocation, 1, Int);
+}
+
+// Set Shader For Unsigned Interger Vector 1
+void Shader::SetUniformUintVec(const char* UniformName, const glm::uvec1 UniformValue) {
+	int ShaderUniformLocation = this->GetShaderUniform(UniformName, this->SHADER_UNIFORM_UINTVEC1);
+	GLint Int[1] = { UniformValue.x };
+	glUniform1iv(ShaderUniformLocation, 1, Int);
+}
+
+// Sets a float vector 1
+void Shader::SetUniformFloatVec(const char* UniformName, const glm::fvec1 UniformValue) {
+	int ShaderUniformLocation = this->GetShaderUniform(UniformName, this->SHADER_UNIFORM_FLOATVEC1);
+	GLfloat Float[1] = { UniformValue.x };
+	glUniform1fv(ShaderUniformLocation, 1, Float);
+}
+
+// Set Shader For Bool
+void Shader::SetUniformBool(const char* UniformName, const bool UniformValue) {
+	int ShaderUniformLocation = this->GetShaderUniform(UniformName, this->SHADER_UNIFORM_BOOL);
+	glUniform1i(ShaderUniformLocation, (int)UniformValue);
+}

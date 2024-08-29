@@ -6,6 +6,7 @@
 #include "Renderer.hpp"
 #include "Util.hpp"
 #include "Shader.hpp"
+#include "texture.hpp"
 
 //▒█░░▒█ █▀▀ █▀▀█ ▀▀█▀▀ █▀▀ █░█ 　 ░█▀▀█ █▀▀█ █▀▀█ █▀▀█ █░░█ 　 ▒█▀▀█ █░░█ █▀▀ █▀▀ █▀▀ █▀▀█
 //░▒█▒█░ █▀▀ █▄▄▀ ░░█░░ █▀▀ ▄▀▄ 　 ▒█▄▄█ █▄▄▀ █▄▄▀ █▄▄█ █▄▄█ 　 ▒█▀▀▄ █░░█ █▀▀ █▀▀ █▀▀ █▄▄▀
@@ -25,6 +26,9 @@ void VertexBufferArray::VertexArray(const int Index, const int ArraySize, const 
 	glGenVertexArrays(1, &(this->VertexArrayObject));
 	glBindVertexArray(this->VertexArrayObject);
 
+	// We can add color to our strides
+	// But i opted not to since most of our assets are gonna texture wise
+	// This will just hog up uneeded memory, slowing us down in the long run
 	glVertexAttribPointer(Index, ArraySize, GL_FLOAT, GL_FALSE, Stride, Data);
 
 	glEnableVertexAttribArray(0);
@@ -52,13 +56,19 @@ void VertexBufferArray::Destroy() {
 /*-----------------------------------------------------------------------------------------------------------*/
 void RenderTriangle() {
 	float vertices[] = {
-	-0.5f, -0.5f, 0.0f, // left  
-	 0.5f, -0.5f, 0.0f, // right 
-	 0.0f,  0.5f, 0.0f  // top   
+		-0.5f, -0.5f, 0.0f, // left  
+		 0.5f, -0.5f, 0.0f, // right 
+		 0.0f,  0.5f, 0.0f  // top   
+	};
+	float texCoords[] = {
+		0.0f, 0.0f,  // lower-left corner  
+		1.0f, 0.0f,  // lower-right corner
+		0.5f, 1.0f   // top-center corner
 	};
 
 	// Shader Crap
 	Shader ShaderInstance("Default.vert", "Default.frag");
+	Texture TextureInstance("Test.png", Texture::NEAREST_FILTERING);
 
 	VertexBufferArray VertexArrayBuffer;
 	VertexArrayBuffer.VertexBuffer(VertexArrayBuffer.ARRAY_BUFFER, sizeof(vertices), vertices, VertexArrayBuffer.STATIC_DRAW);
@@ -66,8 +76,8 @@ void RenderTriangle() {
 	VertexArrayBuffer.BindVertexArray();
 
 	ShaderInstance.UseShaderProgram();
-	ShaderInstance.SetShaderUniform("color", ShaderInstance.SHADER_UNIFORM_INT, glm::vec4(0, 0.0, 0.0, 1.0));
-	
+	ShaderInstance.SetUniformFloat("color", 1.0);
+
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
 	VertexArrayBuffer.Destroy();
