@@ -1,5 +1,6 @@
 ﻿#include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 #include <iostream>
 
 #include "Renderer.hpp"
@@ -23,6 +24,7 @@ void VertexBufferArray::VertexBuffer(const VertexBufferType VertexBuffer, const 
 void VertexBufferArray::VertexArray(const int Index, const int ArraySize, const int Stride, const void* Data) {
 	glGenVertexArrays(1, &(this->VertexArrayObject));
 	glBindVertexArray(this->VertexArrayObject);
+
 	glVertexAttribPointer(Index, ArraySize, GL_FLOAT, GL_FALSE, Stride, Data);
 
 	glEnableVertexAttribArray(0);
@@ -64,6 +66,7 @@ void RenderTriangle() {
 	VertexArrayBuffer.BindVertexArray();
 
 	ShaderInstance.UseShaderProgram();
+	ShaderInstance.SetShaderUniform("color", ShaderInstance.SHADER_UNIFORM_INT, glm::vec4(0, 0.0, 0.0, 1.0));
 	
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 

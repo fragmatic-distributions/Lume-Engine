@@ -1,5 +1,7 @@
-#include <iostream>
+﻿#include <iostream>
 #include <glad/glad.h>
+#include <glm/glm.hpp>
+#include <typeinfo>
 
 #include "Util.hpp"
 #include "Shader.hpp"
@@ -95,3 +97,39 @@ void Shader::Destroy() {
 	}
 	glDeleteProgram(this->ShaderProgramInstance);
 }
+
+//█░░█ █▀▀▄ ░▀░ █▀▀ █▀▀█ █▀▀█ █▀▄▀█ █▀▀
+//█░░█ █░░█ ▀█▀ █▀▀ █░░█ █▄▄▀ █░▀░█ ▀▀█
+//░▀▀▀ ▀░░▀ ▀▀▀ ▀░░ ▀▀▀▀ ▀░▀▀ ▀░░░▀ ▀▀▀
+
+// Sets shader integer
+/*-----------------------------------------------------------------------------------------------------------*/
+void Shader::SetShaderUniform(const char* UniformName, Shader::Uniform Uniformtype, glm::vec4 UniformValue) {
+	int ShaderUniformLocation = glGetUniformLocation(this->ShaderProgramInstance, UniformName);
+	if (ShaderUniformLocation == -1) {
+		std::cout << "SHADER.CPP::SET_SHADER_UNIFORM::UNIFORM_INVALID::ERROR, GOT : " << UniformName << std::endl;
+		return;
+	}
+
+	std::cout << ShaderUniformLocation << std::endl;
+	switch (Uniformtype) {
+		case SHADER_UNIFORM_INT:
+			glUniform1i(ShaderUniformLocation, UniformValue.x);
+			break;
+	//	case SHADER_UNIFORM_FLOAT:
+	//		glUniform1f(ShaderUniformLocation, UniformValue);
+	//		break;
+	//	case SHADER_UNIFORM_UINT:
+	//		glUniform1ui(ShaderUniformLocation, UniformValue);
+	//		break;
+	//	case SHADER_UNIFORM_VEC1:
+	//		glUniform1fv(ShaderUniformLocation, UniformValue);
+	//		break;
+		case SHADER_UNIFORM_VEC4:
+			std::cout << typeid(UniformValue).name() << std::endl;
+			glUniform4i(ShaderUniformLocation, UniformValue.x, UniformValue.y, UniformValue.z, UniformValue.w);
+			break;
+	}
+}
+
+
