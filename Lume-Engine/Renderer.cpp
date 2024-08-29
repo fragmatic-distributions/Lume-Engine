@@ -1,4 +1,4 @@
-#include <glad/glad.h>
+﻿#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
@@ -6,6 +6,48 @@
 #include "Util.hpp"
 #include "Shader.hpp"
 
+//▒█░░▒█ █▀▀ █▀▀█ ▀▀█▀▀ █▀▀ █░█ 　 ░█▀▀█ █▀▀█ █▀▀█ █▀▀█ █░░█ 　 ▒█▀▀█ █░░█ █▀▀ █▀▀ █▀▀ █▀▀█
+//░▒█▒█░ █▀▀ █▄▄▀ ░░█░░ █▀▀ ▄▀▄ 　 ▒█▄▄█ █▄▄▀ █▄▄▀ █▄▄█ █▄▄█ 　 ▒█▀▀▄ █░░█ █▀▀ █▀▀ █▀▀ █▄▄▀
+//░░▀▄▀░ ▀▀▀ ▀░▀▀ ░░▀░░ ▀▀▀ ▀░▀ 　 ▒█░▒█ ▀░▀▀ ▀░▀▀ ▀░░▀ ▄▄▄█ 　 ▒█▄▄█ ░▀▀▀ ▀░░ ▀░░ ▀▀▀ ▀░▀▀
+
+// Creates a vertex Buffer Instance
+/*-----------------------------------------------------------------------------------------------------------*/
+void VertexBufferArray::VertexBuffer(const VertexBufferType VertexBuffer, const size_t VertexByteSize, const float Vertices[], const DrawMode BufferDrawType) {
+	glGenBuffers(1, &(this->VertexBufferObject));
+	glBindBuffer(VertexBuffer, this->VertexBufferObject);
+	glBufferData(VertexBuffer, VertexByteSize, Vertices, BufferDrawType);
+}
+
+// Creates a vertex Array Object
+/*-----------------------------------------------------------------------------------------------------------*/
+void VertexBufferArray::VertexArray(const int Index, const int ArraySize, const int Stride, const void* Data) {
+	glGenVertexArrays(1, &(this->VertexArrayObject));
+	glBindVertexArray(this->VertexArrayObject);
+	glVertexAttribPointer(Index, ArraySize, GL_FLOAT, GL_FALSE, Stride, Data);
+
+	glEnableVertexAttribArray(0);
+}
+
+// Binds the vertex array
+/*-----------------------------------------------------------------------------------------------------------*/
+void VertexBufferArray::BindVertexArray() {
+	glBindVertexArray(this->VertexArrayObject);
+}
+
+// Destory a Instance
+/*-----------------------------------------------------------------------------------------------------------*/
+void VertexBufferArray::Destroy() {
+	glDeleteBuffers(1, &(this->VertexBufferObject));
+	glDeleteVertexArrays(1, &(this->VertexBufferObject));
+}
+
+
+//▒█▀▀█ █▀▀ █▀▀▄ █▀▀▄ █▀▀ █▀▀█ █▀▀ █▀▀█
+//▒█▄▄▀ █▀▀ █░░█ █░░█ █▀▀ █▄▄▀ █▀▀ █▄▄▀
+//▒█░▒█ ▀▀▀ ▀░░▀ ▀▀▀░ ▀▀▀ ▀░▀▀ ▀▀▀ ▀░▀▀
+
+// Test Triangle
+/*-----------------------------------------------------------------------------------------------------------*/
 void RenderTriangle() {
 	float vertices[] = {
 	-0.5f, -0.5f, 0.0f, // left  
@@ -16,57 +58,22 @@ void RenderTriangle() {
 	// Shader Crap
 	Shader ShaderInstance("Default.vert", "Default.frag");
 
-	//std::string VertexShaderFile = OpenShaderFile("Default.vert");
- //   std::string FragmentShaderFile = OpenShaderFile("Default.frag");
- //   const char* VertexCode = VertexShaderFile.c_str();
- //   const char* FragmentCode = FragmentShaderFile.c_str();
-
-	//unsigned int VertexShader;
-	//VertexShader = glCreateShader(GL_VERTEX_SHADER);
-	//glShaderSource(VertexShader, 1, &VertexCode, NULL);
-	//glCompileShader(VertexShader);
-
-	//unsigned int FragmentShader;
-	//FragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	//glShaderSource(FragmentShader, 1, &FragmentCode, NULL);
-	//glCompileShader(FragmentShader);
-
-	//unsigned int ShaderProgram;
-	//ShaderProgram = glCreateProgram();
-	//glAttachShader(ShaderProgram, VertexShader);
-	//glAttachShader(ShaderProgram, FragmentShader);
-
-	//glLinkProgram(ShaderProgram);
-
-	unsigned int VertexBufferObject;
-	glGenBuffers(1, &VertexBufferObject);
-	glBindBuffer(GL_ARRAY_BUFFER, VertexBufferObject);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	unsigned int VertexArrayObject;
-	glGenVertexArrays(1, &VertexArrayObject);
-	glBindVertexArray(VertexArrayObject);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
-	//glDeleteShader(FragmentShader);
-	//glDeleteShader(VertexShader);
-
-	//glUseProgram(ShaderProgram);
+	VertexBufferArray VertexArrayBuffer;
+	VertexArrayBuffer.VertexBuffer(VertexArrayBuffer.ARRAY_BUFFER, sizeof(vertices), vertices, VertexArrayBuffer.STATIC_DRAW);
+	VertexArrayBuffer.VertexArray(0, 3, 3 * sizeof(float), (void*)0);
+	VertexArrayBuffer.BindVertexArray();
 
 	ShaderInstance.UseShaderProgram();
-	glBindVertexArray(VertexArrayObject);
+	
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
+	VertexArrayBuffer.Destroy();
 	ShaderInstance.Destroy();
 }
 
 // Draws a frame to the screen
 /*-----------------------------------------------------------------------------------------------------------*/
 void RenderFrame(GLFWwindow* WindowInstance) {
-
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
