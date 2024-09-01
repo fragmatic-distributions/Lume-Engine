@@ -1,26 +1,30 @@
 #include <glad/glad.h>
 
-class Texture {
+class LumeTexture {
 public:
-	enum TextureColorChannel : int {
-		RGB = GL_RGB, 
-		RGBA = GL_RGBA,
+	enum ColorChannels : int {
+		R =					GL_R,
+		RG =				GL_RG,
+		RGB =				GL_RGB,
+		RGBA =				GL_RGBA,
 	};
 
-	Texture(const char* TextureLocation, TextureColorChannel ColorChannels);
-	~Texture();
+	LumeTexture(LumeTexture::ColorChannels ColorChannels);
+	~LumeTexture();
 
-	unsigned int TextureInstance;
-
-	void BindTexture();
+	void LoadTexture(const char* TexturePath);
+	void BindTexture(unsigned int TextureSlot);
 	void Destroy();
 private:
-	struct Image {
+	ColorChannels ColorFormat;
+	unsigned int Texture;
+
+	struct ImageStruct {
 		int ImageWidth;
 		int ImageHeight;
 		int ChannelNumbers;
 		unsigned char* ImageData;
 	};
 
-	//std::string FetchImageFile(const char* FolderFileNamePath);
+	bool ValidateTexture(const char* TexturePath);
 };

@@ -13,6 +13,9 @@
     <Filter Include="Source\Shaders">
       <UniqueIdentifier>{6310a64b-b55a-4ecb-95e2-4434fff51964}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Graphics">
+      <UniqueIdentifier>{3d062f2e-55e1-4a1c-bb33-c22490f4d8bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Glad.c" />
@@ -26,10 +29,10 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>Source\Core</Filter>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,13 +46,10 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Shader.hpp">
-      <Filter>Source\Core</Filter>
+      <Filter>Source\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="texture.hpp">
-      <Filter>Source\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Enum.hpp">
-      <Filter>Source</Filter>
+    <ClInclude Include="Texture.hpp">
+      <Filter>Source\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

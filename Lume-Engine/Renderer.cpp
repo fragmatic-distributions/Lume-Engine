@@ -91,8 +91,9 @@ void RenderTriangle() {
 	ShaderInstance.BindProgram();
 	ShaderInstance.SetUniformInt("TextureInstance", 0);
 
-	Texture TextureInstance("Test.png", Texture::RGBA);
-	TextureInstance.BindTexture();
+	LumeTexture TextureInstance(LumeTexture::RGBA);
+	TextureInstance.LoadTexture("../Graphics/Tex/Test.png");
+	TextureInstance.BindTexture(0);
 
 	VertexBufferArray VertexArrayBuffer;
 	unsigned int VertexBufferObject = VertexArrayBuffer.VertexBuffer(VertexArrayBuffer.ARRAY_BUFFER, sizeof(vertices), &vertices, VertexArrayBuffer.STATIC_DRAW);

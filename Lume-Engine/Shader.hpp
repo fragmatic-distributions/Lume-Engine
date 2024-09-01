@@ -1,15 +1,13 @@
 #include <iostream>
 #include <map>
 
-#include "Enum.hpp"
-
 class LumeShader {
 public:
 	enum LumeShaderConfig : int {
-		VERTEX = GL_VERTEX_SHADER,
-		FRAGMENT = GL_FRAGMENT_SHADER,
-		COMPUTE = GL_COMPUTE_SHADER,
-		GEOMETRY = GL_GEOMETRY_SHADER,
+		VERTEX =					GL_VERTEX_SHADER,
+		FRAGMENT =					GL_FRAGMENT_SHADER,
+		COMPUTE =					GL_COMPUTE_SHADER,
+		GEOMETRY =					GL_GEOMETRY_SHADER,
 	};
 
 	unsigned int ShaderProgram;
@@ -35,8 +33,8 @@ private:
 class ShaderHelper {
 public:
 	static enum CompilerType : int {
-		SHADER = 1,
-		PROGRAM = 2,
+		SHADER =					1,
+		PROGRAM =					2,
 	};
 
 	//static void DebugFileContents(std::map<LumeShader::LumeShaderConfig, std::string> FileContents);

@@ -125,8 +125,6 @@ LumeShader::~LumeShader() {
 	if (this->ShaderProgram) {
 		glDeleteProgram(this->ShaderProgram);
 	}
-
-	this->ShaderProgram = glCreateProgram();
 }
 
 // creation Function Overloaders
@@ -149,7 +147,6 @@ void LumeShader::CreateShader(const char* ShaderFile01) {
 
 	glAttachShader(this->ShaderProgram, ShaderID01);
 
-
 	glCompileShader(this->ShaderProgram);
 	glLinkProgram(this->ShaderProgram);
 
@@ -166,8 +163,6 @@ void LumeShader::CreateShader(const char* ShaderFile01, const char* ShaderFile02
 	FileBindings[this->ShaderTypeBindings[1]] = ShaderFile02;
 
 	std::map<LumeShader::LumeShaderConfig, std::string> ShaderFileContents = ShaderHelper::FetchShaderFileContent(&(this->ShaderTypeBindings), FileBindings);
-
-	this->ShaderProgram = glCreateProgram();
 
 	const LumeShader::LumeShaderConfig ShaderType01 = this->ShaderTypeBindings[0];
 	const LumeShader::LumeShaderConfig ShaderType02 = this->ShaderTypeBindings[1];
@@ -209,8 +204,6 @@ void LumeShader::CreateShader(const char* ShaderFile01, const char* ShaderFile02
 
 	std::map<LumeShader::LumeShaderConfig, std::string> ShaderFileContents = ShaderHelper::FetchShaderFileContent(&(this->ShaderTypeBindings), FileBindings);
 
-	this->ShaderProgram = glCreateProgram();
-
 	const LumeShader::LumeShaderConfig ShaderType01 = this->ShaderTypeBindings[0];
 	const LumeShader::LumeShaderConfig ShaderType02 = this->ShaderTypeBindings[1];
 	const LumeShader::LumeShaderConfig ShaderType03 = this->ShaderTypeBindings[2];
@@ -239,6 +232,7 @@ void LumeShader::CreateShader(const char* ShaderFile01, const char* ShaderFile02
 
 	glAttachShader(this->ShaderProgram, ShaderID01);
 	glAttachShader(this->ShaderProgram, ShaderID02);
+	glAttachShader(this->ShaderProgram, ShaderID03);
 
 	glCompileShader(this->ShaderProgram);
 	glLinkProgram(this->ShaderProgram);
@@ -279,109 +273,3 @@ void LumeShader::SetUniformInt(const char* UniformName, const int UniformValue) 
 	ShaderHelper::UniformValidation(&UniformLocation, UniformName);
 	glUniform1i(UniformLocation, UniformValue);
 }
-
-// 
-//Shader::Shader(const char* VertexShaderPath, const char* FragmentShaderPath) {
-//
-//	std::string VertexShaderString = Util::OpenShaderFile(VertexShaderPath);
-//	std::string FragmentShaderString = Util::OpenShaderFile(FragmentShaderPath);
-//
-//	const char* VertexShaderSource = VertexShaderString.c_str();
-//	const char* FragmentShaderSource = FragmentShaderString.c_str();
-//
-//	struct Shader::ShaderStruct ShaderInformation;
-//	ShaderInformation.VertexShader = glCreateShader(GL_VERTEX_SHADER);
-//	ShaderInformation.FragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-//	ShaderInformation.ShaderProgram = glCreateProgram();
-//	this->ShaderObject = ShaderInformation.ShaderProgram;
-//
-//	glShaderSource(ShaderInformation.VertexShader, 1, &VertexShaderSource, NULL);
-//	glShaderSource(ShaderInformation.FragmentShader, 1, &FragmentShaderSource, NULL);
-//
-//	glCompileShader(ShaderInformation.VertexShader);
-//	glCompileShader(ShaderInformation.FragmentShader);
-//
-//	glAttachShader(ShaderInformation.ShaderProgram, ShaderInformation.VertexShader);
-//	glAttachShader(ShaderInformation.ShaderProgram, ShaderInformation.FragmentShader);
-//
-//	glGetShaderiv(ShaderInformation.VertexShader, GL_LINK_STATUS, &ShaderInformation.VertexShaderIV);
-//	glGetShaderiv(ShaderInformation.FragmentShader, GL_LINK_STATUS, &ShaderInformation.FragmentShaderIV);
-//	glGetProgramiv(ShaderInformation.ShaderProgram, GL_LINK_STATUS, &ShaderInformation.ShaderProgramIV);
-//
-//	// Error Detection inside GLSL
-//	bool DestuctClass = false;
-//	if (ShaderInformation.VertexShaderIV == -1) {
-//		char ShaderInfoLog;
-//		glGetShaderInfoLog(ShaderInformation.VertexShader, 512, NULL, &ShaderInfoLog);
-//		std::cout << "VERTEX_SHADER_ERROR | " << __FILE__ << " | " << __LINE__ << " | " << ShaderInfoLog << std::endl;
-//
-//		DestuctClass = true;
-//	}
-//	else if (ShaderInformation.FragmentShaderIV == -1) {
-//		char ShaderInfoLog;
-//		glGetShaderInfoLog(ShaderInformation.FragmentShader, 512, NULL, &ShaderInfoLog);
-//		std::cout << "FRAGMENT_SHADER_ERROR | " << __FILE__ << " | " << __LINE__ << " | " << ShaderInfoLog << std::endl;
-//
-//		DestuctClass = true;
-//	}
-//	else if (ShaderInformation.ShaderProgramIV == -1) {
-//		char ProgramInfoLog;
-//		glGetProgramInfoLog(ShaderInformation.FragmentShader, 512, NULL, &ProgramInfoLog);
-//		std::cout << "SHADER_PROGRAM_ERROR | " << __FILE__ << " | " << __LINE__ << " | " << ProgramInfoLog << std::endl;
-//
-//		DestuctClass = true;
-//	}
-//	
-//	glDeleteShader(ShaderInformation.VertexShader);
-//	glDeleteShader(ShaderInformation.FragmentShader);
-//
-//	if (DestuctClass) {
-//		this->ProgramIsActive = false;
-//		glDeleteProgram(ShaderInformation.ShaderProgram);
-//		delete this;
-//		return;
-//	}
-//
-//	this->ProgramIsActive = true;
-//	glLinkProgram(ShaderInformation.ShaderProgram);
-//}
-//
-//Shader::~Shader() {
-//	if (!this->ProgramIsActive) {
-//		return;
-//	}
-//	glDeleteProgram(this->ShaderObject);
-//}
-//
-//void Shader::UseShaderProgram() {
-//	if (!this->ProgramIsActive) {
-//		return;
-//	}
-//	glUseProgram(this->ShaderObject);
-//}
-//
-//void Shader::Destroy() {
-//	if (!this->ProgramIsActive) {
-//		return;
-//	}
-//
-//	this->ProgramIsActive = false;
-//	glDeleteProgram(this->ShaderObject);
-//}
-//
-////█░░█ █▀▀▄ ░▀░ █▀▀ █▀▀█ █▀▀█ █▀▄▀█ █▀▀
-////█░░█ █░░█ ▀█▀ █▀▀ █░░█ █▄▄▀ █░▀░█ ▀▀█
-////░▀▀▀ ▀░░▀ ▀▀▀ ▀░░ ▀▀▀▀ ▀░▀▀ ▀░░░▀ ▀▀▀
-//
-//// Checks if uniform exists
-//void Shader::UniformValidation(int UniformLocation, const char* UniformName) {
-//	if (UniformLocation == -1) {
-//		std::cout << "SHADER_UNIFORM_UNDEFINED | " << __FILE__ << " | " << __LINE__ << " | " << UniformName << std::endl;
-//	}
-//}
-//
-//void Shader::SetUniformInt(const char* UniformName, int UniformValue) {
-//	int UniformLocation = glGetUniformLocation(this->ShaderObject, UniformName);
-//	this->UniformValidation(UniformLocation, UniformName);
-//	glUniform1i(UniformLocation, UniformValue);
-//}
