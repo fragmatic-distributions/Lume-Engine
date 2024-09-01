@@ -1,6 +1,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <iostream>
+#include <vector>
 
 class VertexBufferArray{
 public:
@@ -15,12 +17,14 @@ public:
 		STREAM_DRAW = GL_STREAM_DRAW,
 	};
 
-	void VertexBuffer(const VertexBufferType VertexBuffer, const size_t VertexByteSize, const float Vertices[], const DrawMode BufferDrawType);
-	void VertexArray(const int Index, const int ArraySize, const int Stride, const void* Data);
+	unsigned int VertexBuffer(const VertexBufferType VertexBuffer, const size_t VertexByteSize, const void* Vertices, const DrawMode BufferDrawType);
+	unsigned int VertexArray(const int Index, const int ArraySize, const int Stride, const void* Data);
+
+	void BindVertexBuffer(const VertexBufferType VertexBuffer, unsigned int* BufferInstance);
 	void BindVertexArray();
 	void Destroy();
 private:
-	unsigned int VertexBufferObject;
+	std::vector<unsigned int> VertexBufferObjects;
 	unsigned int VertexArrayObject;
 };
 

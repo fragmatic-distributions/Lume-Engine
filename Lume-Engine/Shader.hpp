@@ -1,37 +1,75 @@
 #include <iostream>
-#include <glm/glm.hpp>
-#include <glad/glad.h>
 #include <map>
 
-#include "Util.hpp"
+#include "Enum.hpp"
 
-class Shader {
+class LumeShader {
 public:
-	Shader(const char* VertexShaderPath, const char* FragmentShaderPath);
-	void UseShaderProgram();
-	void Destroy();
-
-	enum UniformType : int {
-		SHADER_UNIFORM_FLOAT = 1,
-		SHADER_UNIFORM_INT = 2,
-		SHADER_UNIFORM_UINT = 3,
-		SHADER_UNIFORM_BOOL = 4,
-		SHADER_UNIFORM_INTVEC1 = 5,
-		SHADER_UNIFORM_UINTVEC1 = 6,
-		SHADER_UNIFORM_FLOATVEC1 = 7,
+	enum LumeShaderConfig : int {
+		VERTEX = GL_VERTEX_SHADER,
+		FRAGMENT = GL_FRAGMENT_SHADER,
+		COMPUTE = GL_COMPUTE_SHADER,
+		GEOMETRY = GL_GEOMETRY_SHADER,
 	};
 
-	// Shader Contact
-	void SetUniformFloat(const char* UniformName, const float UniformValue);
+	unsigned int ShaderProgram;
+
+	LumeShader(LumeShaderConfig ShaderType01);
+	LumeShader(LumeShaderConfig ShaderType01, LumeShaderConfig ShaderType02);
+	LumeShader(LumeShaderConfig ShaderType01, LumeShaderConfig ShaderType02, LumeShaderConfig ShaderType03);
+	~LumeShader();
+
+	void CreateShader(const char* ShaderFile01);
+	void CreateShader(const char* ShaderFile01, const char* ShaderFile02);
+	void CreateShader(const char* ShaderFile01, const char* ShaderFile02, const char* ShaderFile03);
+
+	void BindProgram();
+	void UnbindProgram();
+	void DestroyProgram();
+
 	void SetUniformInt(const char* UniformName, const int UniformValue);
-	void SetUniformUint(const char* UniformName, const unsigned int UniformValue);
-	void SetUniformIntVec(const char* UniformName, const glm::ivec1 UniformValue);
-	void SetUniformBool(const char* UniformName, const bool UniformValue);
-	void SetUniformUintVec(const char* UniformName, const glm::uvec1 UniformValue);
-	void SetUniformFloatVec(const char* UniformName, const glm::fvec1 UniformValue);
-private:	
-	//std::map<std::string, int> ShaderUniforms = {}; // Dk what limit i should put
-	int GetShaderUniform(const char* UniformName, UniformType UniformType);
-	
-	unsigned int ShaderProgramInstance = 0;
+private:
+	std::map <int, LumeShaderConfig> ShaderTypeBindings;
 };
+
+class ShaderHelper {
+public:
+	static enum CompilerType : int {
+		SHADER = 1,
+		PROGRAM = 2,
+	};
+
+	//static void DebugFileContents(std::map<LumeShader::LumeShaderConfig, std::string> FileContents);
+	static std::map<LumeShader::LumeShaderConfig, std::string> FetchShaderFileContent(std::map<int, LumeShader::LumeShaderConfig>* ShaderTypeBindings,
+																				   	  std::map<LumeShader::LumeShaderConfig, const char*> ShaderFiles);
+
+	static int ValidateCompiler(unsigned int* CompilerID, CompilerType CompilerType);
+	static void UniformValidation(int* UniformLocation, const char* UniformName);
+};
+//class Shader {
+//public:
+//	Shader(const char* VertexShaderPath, const char* FragmentShaderPath);
+//	~Shader();
+//
+//	struct ShaderStruct {
+//		unsigned int VertexShader;
+//		unsigned int FragmentShader;
+//		unsigned int ShaderProgram;
+//
+//		int VertexShaderIV;
+//		int FragmentShaderIV;
+//		int ShaderProgramIV;
+//	};
+//
+//	void UseShaderProgram();
+//	void Destroy();
+//
+//	// Uniform
+//	void SetUniformInt(const char* UniformName, int UniformValue);
+//
+//	unsigned int ShaderObject;
+//private:
+//	bool ProgramIsActive;
+//
+//	void UniformValidation(int UniformLocation, const char* UniformName);
+//};

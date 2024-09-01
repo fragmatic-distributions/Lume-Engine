@@ -1,2 +1,5 @@
-﻿  texture.cpp
+﻿  Renderer.cpp
+C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Shader.hpp(37,14): warning C4091: 'static ': ignored on left of 'ShaderHelper::CompilerType' when no variable is declared
+  (compiling source file 'Renderer.cpp')
+  
   Lume-Engine.vcxproj -> C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\x64\Debug\Lume-Engine.exe

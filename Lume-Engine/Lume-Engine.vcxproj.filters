@@ -48,6 +48,9 @@
     <ClInclude Include="texture.hpp">
       <Filter>Source\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Enum.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Default.vert">

@@ -2,12 +2,15 @@
 
 class Texture {
 public:
-	enum TextureFiltering : int {
-		LINEAR_FILTERING = GL_LINEAR,
-		NEAREST_FILTERING = GL_NEAREST,
+	enum TextureColorChannel : int {
+		RGB = GL_RGB, 
+		RGBA = GL_RGBA,
 	};
 
-	Texture(const char* TextureLocation, TextureFiltering TextureFilterMethod);
+	Texture(const char* TextureLocation, TextureColorChannel ColorChannels);
+	~Texture();
+
+	unsigned int TextureInstance;
 
 	void BindTexture();
 	void Destroy();
@@ -19,5 +22,5 @@ private:
 		unsigned char* ImageData;
 	};
 
-	unsigned int TextureInstance;
+	//std::string FetchImageFile(const char* FolderFileNamePath);
 };
