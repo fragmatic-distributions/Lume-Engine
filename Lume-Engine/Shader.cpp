@@ -59,7 +59,6 @@ std::map<LumeShader::LumeShaderConfig, std::string> ShaderHelper::FetchShaderFil
 		const LumeShader::LumeShaderConfig LumeShaderType = it->second;
 		const char* ShaderDirectory = ShaderFiles[LumeShaderType];
 
-
 		std::string FileContents;
 		std::ifstream ShaderFileInstance;
 

@@ -34,6 +34,9 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Source\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>Source\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.hpp">
@@ -49,6 +52,9 @@
       <Filter>Source\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Texture.hpp">
+      <Filter>Source\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.hpp">
       <Filter>Source\Graphics</Filter>
     </ClInclude>
   </ItemGroup>

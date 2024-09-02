@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\VertexArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\VertexArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Default.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Default.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\VertexArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\VertexArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Texture.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -23,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Shader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,77 +39,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Default.frag",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Default.frag",
-              "RelativeDocumentMoniker": "Lume-Engine\\Default.frag",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Default.frag",
-              "RelativeToolTip": "Lume-Engine\\Default.frag",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-09-01T20:14:32.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Shader.cpp",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Shader.cpp",
-              "RelativeDocumentMoniker": "Lume-Engine\\Shader.cpp",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Shader.cpp",
-              "RelativeToolTip": "Lume-Engine\\Shader.cpp",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAHAAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-01T19:51:34.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Shader.hpp",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Shader.hpp",
-              "RelativeDocumentMoniker": "Lume-Engine\\Shader.hpp",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Shader.hpp",
-              "RelativeToolTip": "Lume-Engine\\Shader.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-01T18:32:30.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Texture.hpp",
               "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Texture.hpp",
               "RelativeDocumentMoniker": "Lume-Engine\\Texture.hpp",
               "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Texture.hpp",
               "RelativeToolTip": "Lume-Engine\\Texture.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-01T17:46:29.686Z",
+              "WhenOpened": "2024-09-02T13:36:32.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Texture.cpp",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Texture.cpp",
-              "RelativeDocumentMoniker": "Lume-Engine\\Texture.cpp",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Texture.cpp",
-              "RelativeToolTip": "Lume-Engine\\Texture.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-01T17:46:18.105Z",
+              "Title": "VertexArray.hpp",
+              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\VertexArray.hpp",
+              "RelativeDocumentMoniker": "Lume-Engine\\VertexArray.hpp",
+              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\VertexArray.hpp",
+              "RelativeToolTip": "Lume-Engine\\VertexArray.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-02T09:33:43.716Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "VertexArray.cpp",
+              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\VertexArray.cpp",
+              "RelativeDocumentMoniker": "Lume-Engine\\VertexArray.cpp",
+              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\VertexArray.cpp",
+              "RelativeToolTip": "Lume-Engine\\VertexArray.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-02T10:38:49.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Shader.hpp",
+              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Shader.hpp",
+              "RelativeDocumentMoniker": "Lume-Engine\\Shader.hpp",
+              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Shader.hpp",
+              "RelativeToolTip": "Lume-Engine\\Shader.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-02T11:15:52.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Renderer.cpp",
               "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Renderer.cpp",
               "RelativeDocumentMoniker": "Lume-Engine\\Renderer.cpp",
               "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Renderer.cpp",
               "RelativeToolTip": "Lume-Engine\\Renderer.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAcwEIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-01T15:37:53.011Z",
               "EditorCaption": ""
