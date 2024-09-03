@@ -22,47 +22,51 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp">
+    <ClCompile Include="Core\Renderer.cpp">
       <Filter>Source\Core</Filter>
     </ClCompile>
     <ClCompile Include="Util.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
+    <ClCompile Include="Graphics\Shader.cpp">
       <Filter>Source\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="Graphics\Texture.cpp">
       <Filter>Source\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="VertexArray.cpp">
+    <ClCompile Include="Graphics\VertexArray.cpp">
       <Filter>Source\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="game\GameObjects.cpp" />
+    <ClCompile Include="game\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.hpp">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.hpp">
+    <ClInclude Include="Core\Renderer.hpp">
       <Filter>Source\Core</Filter>
     </ClInclude>
     <ClInclude Include="Util.hpp">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.hpp">
+    <ClInclude Include="Graphics\Shader.hpp">
       <Filter>Source\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.hpp">
+    <ClInclude Include="Graphics\Texture.hpp">
       <Filter>Source\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="VertexArray.hpp">
+    <ClInclude Include="Graphics\VertexArray.hpp">
       <Filter>Source\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="game\GameObjects.hpp" />
+    <ClInclude Include="game\Scene.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Default.vert">
+    <None Include="Shaders\Default.vert">
       <Filter>Source\Shaders</Filter>
     </None>
-    <None Include="Default.frag">
+    <None Include="Shaders\Default.frag">
       <Filter>Source\Shaders</Filter>
     </None>
   </ItemGroup>

@@ -13,13 +13,10 @@ namespace glm
 		typename genType::value_type d = glm::dot(dir, planeNormal);
 		typename genType::value_type Epsilon = std::numeric_limits<typename genType::value_type>::epsilon();
 
-		if(glm::abs(d) > Epsilon)  // if dir and planeNormal are not perpendicular
+		if(d < -Epsilon)
 		{
-			typename genType::value_type const tmp_intersectionDistance = 	glm::dot(planeOrig - orig, planeNormal) / d;
-			if (tmp_intersectionDistance > static_cast<typename genType::value_type>(0)) { // allow only intersections
-				intersectionDistance = tmp_intersectionDistance;
-				return true;
-			}
+			intersectionDistance = glm::dot(planeOrig - orig, planeNormal) / d;
+			return true;
 		}
 
 		return false;
@@ -45,7 +42,7 @@ namespace glm
 
 		vec<3, T, Q> Perpendicular(0);
 
-		if (det > static_cast<T>(0))
+		if(det > std::numeric_limits<T>::epsilon())
 		{
 			// calculate distance from vert0 to ray origin
 			vec<3, T, Q> const dist = orig - vert0;
@@ -63,7 +60,7 @@ namespace glm
 			if((baryPosition.y < static_cast<T>(0)) || ((baryPosition.x + baryPosition.y) > det))
 				return false;
 		}
-		else if(det < static_cast<T>(0))
+		else if(det < -std::numeric_limits<T>::epsilon())
 		{
 			// calculate distance from vert0 to ray origin
 			vec<3, T, Q> const dist = orig - vert0;
@@ -108,19 +105,19 @@ namespace glm
 
 		genType Perpendicular = cross(dir, edge2);
 
-		typename genType::value_type det = dot(edge1, Perpendicular);
+		float det = dot(edge1, Perpendicular);
 
 		if (det > -Epsilon && det < Epsilon)
 			return false;
 		typename genType::value_type inv_det = typename genType::value_type(1) / det;
 
-		genType Tangent = orig - vert0;
+		genType Tengant = orig - vert0;
 
-		position.y = dot(Tangent, Perpendicular) * inv_det;
+		position.y = dot(Tengant, Perpendicular) * inv_det;
 		if (position.y < typename genType::value_type(0) || position.y > typename genType::value_type(1))
 			return false;
 
-		genType Cotangent = cross(Tangent, edge1);
+		genType Cotangent = cross(Tengant, edge1);
 
 		position.z = dot(dir, Cotangent) * inv_det;
 		if (position.z < typename genType::value_type(0) || position.y + position.z > typename genType::value_type(1))

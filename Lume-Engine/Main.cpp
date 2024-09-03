@@ -3,7 +3,8 @@
 #include <iostream>
 
 #include "Main.hpp"
-#include "Renderer.hpp"
+#include "Core/Renderer.hpp"
+#include "game/Scene.hpp"
 
 // Main Stuff
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -28,6 +29,7 @@ int main()
 	glfwMakeContextCurrent(WindowInstance);
 	glfwSetFramebufferSizeCallback(WindowInstance, FrameBufferSizeCallback); //  for screen sizing
 
+
 	// Initalize Glad
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
@@ -35,6 +37,8 @@ int main()
 		return -1;
 	}
 
+	Scene GameScene;
+	GameScene.Load();
 	// Game Loop shit
 	while (!glfwWindowShouldClose(WindowInstance)) {
 		RenderFrame(WindowInstance);
