@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Graphics\\VertexArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Graphics\\VertexArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Graphics\\VertexArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Graphics\\VertexArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\game\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\GameObjects.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\game\\GameObjects.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Core\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Core\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\GameObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\game\\GameObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Core\\Renderer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\Core\\Renderer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\GameObjects.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DADF8469-5903-4956-ABA6-91408E413D56}|Lume-Engine\\Lume-Engine.vcxproj|solutionrelative:Lume-Engine\\game\\GameObjects.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,76 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VertexArray.hpp",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Graphics\\VertexArray.hpp",
-              "RelativeDocumentMoniker": "Lume-Engine\\Graphics\\VertexArray.hpp",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Graphics\\VertexArray.hpp",
-              "RelativeToolTip": "Lume-Engine\\Graphics\\VertexArray.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-03T17:42:17.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\Scene.cpp",
-              "RelativeDocumentMoniker": "Lume-Engine\\game\\Scene.cpp",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\Scene.cpp",
-              "RelativeToolTip": "Lume-Engine\\game\\Scene.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-03T17:34:23.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VertexArray.cpp",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Graphics\\VertexArray.cpp",
-              "RelativeDocumentMoniker": "Lume-Engine\\Graphics\\VertexArray.cpp",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Graphics\\VertexArray.cpp",
-              "RelativeToolTip": "Lume-Engine\\Graphics\\VertexArray.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-03T16:17:38.794Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GameObjects.cpp",
-              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\GameObjects.cpp",
-              "RelativeDocumentMoniker": "Lume-Engine\\game\\GameObjects.cpp",
-              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\GameObjects.cpp",
-              "RelativeToolTip": "Lume-Engine\\game\\GameObjects.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Main.cpp",
+              "RelativeDocumentMoniker": "Lume-Engine\\Main.cpp",
+              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Main.cpp",
+              "RelativeToolTip": "Lume-Engine\\Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-03T15:11:50.074Z",
+              "WhenOpened": "2024-09-04T15:23:38.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Renderer.hpp",
+              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Core\\Renderer.hpp",
+              "RelativeDocumentMoniker": "Lume-Engine\\Core\\Renderer.hpp",
+              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Core\\Renderer.hpp",
+              "RelativeToolTip": "Lume-Engine\\Core\\Renderer.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-04T15:21:30.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Core\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Lume-Engine\\Core\\Renderer.cpp",
+              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\Core\\Renderer.cpp",
+              "RelativeToolTip": "Lume-Engine\\Core\\Renderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-04T12:24:24.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\Scene.cpp",
+              "RelativeDocumentMoniker": "Lume-Engine\\game\\Scene.cpp",
+              "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\Scene.cpp",
+              "RelativeToolTip": "Lume-Engine\\game\\Scene.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-03T17:34:23.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GameObjects.hpp",
               "DocumentMoniker": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\GameObjects.hpp",
               "RelativeDocumentMoniker": "Lume-Engine\\game\\GameObjects.hpp",
               "ToolTip": "C:\\Users\\hugod\\OneDrive\\Documents\\Fragmatic Projects\\Lume-Engine\\Lume-Engine\\game\\GameObjects.hpp",
               "RelativeToolTip": "Lume-Engine\\game\\GameObjects.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-03T12:52:03.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-03T12:52:03.182Z"
             }
           ]
         }

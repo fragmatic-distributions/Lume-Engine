@@ -60,8 +60,6 @@ void LumeTexture::LoadTexture(const char* TexturePath) {
 	TextureStruct.ImageData = stbi_load(TexturePath, &TextureStruct.ImageWidth, &TextureStruct.ImageHeight, &TextureStruct.ChannelNumbers, 0);
 
 	if (TextureStruct.ImageData) {
-		std::cout << "Yessir" << std::endl;
-
 		glTexImage2D(GL_TEXTURE_2D, 0, this->ColorFormat, TextureStruct.ImageWidth, TextureStruct.ImageHeight, 0, this->ColorFormat, GL_UNSIGNED_BYTE, TextureStruct.ImageData);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}

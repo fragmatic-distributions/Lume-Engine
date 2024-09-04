@@ -8,6 +8,7 @@ void VertexArray::Buffer(VertexArray::BufferType BufferType, const size_t Vertex
 	glBindBuffer(BufferType, Buffer);
 	glBufferData(BufferType, VertexByteSize, Vertices, BufferDrawType);
 
+
 	if (BufferType == VertexArray::ARRAY_BUFFER) {
 		this->VBO = Buffer;
 	}
@@ -41,7 +42,7 @@ void VertexArray::BindBuffer(const BufferType BufferType) {
 }
 
 void VertexArray::BindArray() {
-	glBindVertexArray(this->VBO);
+	glBindVertexArray(this->VAO);
 }
 
 void VertexArray::Destroy() {
