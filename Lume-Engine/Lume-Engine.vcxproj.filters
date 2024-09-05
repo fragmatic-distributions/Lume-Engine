@@ -37,8 +37,9 @@
     <ClCompile Include="Graphics\VertexArray.cpp">
       <Filter>Source\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="game\GameObjects.cpp" />
-    <ClCompile Include="game\Scene.cpp" />
+    <ClCompile Include="Game\GameObjects.cpp" />
+    <ClCompile Include="Game\Scene.cpp" />
+    <ClCompile Include="Game\Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.hpp">
@@ -59,8 +60,9 @@
     <ClInclude Include="Graphics\VertexArray.hpp">
       <Filter>Source\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="game\GameObjects.hpp" />
-    <ClInclude Include="game\Scene.hpp" />
+    <ClInclude Include="Game\GameObjects.hpp" />
+    <ClInclude Include="Game\Scene.hpp" />
+    <ClInclude Include="Game\Camera.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\Default.vert">

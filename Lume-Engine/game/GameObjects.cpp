@@ -3,6 +3,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "../Core/Renderer.hpp"
+#include "Camera.hpp"
 
 // Quad Instacne
 
@@ -28,13 +29,6 @@ Quad::Quad() :
 	this->VertexArrayInstance.Buffer(VertexArray::ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, VertexArray::STATIC_DRAW);
 	this->VertexArrayInstance.Array(0, 3, 5, 0);
 	this->VertexArrayInstance.Array(1, 2, 5, 3);
-
-
-	// TODO: Remove this junk
-	// TODO: make proj mat a global
-
-	this->View = glm::mat4(1.0f);
-	this->View = glm::translate(this->View, glm::vec3(0.0f, 0.0f, -3.0f));
 }
 
 void Quad::Destroy() {
@@ -47,16 +41,9 @@ void Quad::Draw() {
 	this->ShaderInstance.BindProgram();
 	this->ShaderInstance.SetUniformInt("TextureInstance", 0);
 
-	// TEMp
-	// TEMp
-	// TEMp
-	// TEMp
-	this->Projection;
-	this->Projection = glm::perspective(glm::radians(45.0f), (float)Renderer::SCRwidth / (float)Renderer::SCRheight, 0.1f, 100.0f);
-
 	this->ShaderInstance.SetUniformMat4("Transform", &this->Transform);
-	this->ShaderInstance.SetUniformMat4("Projection", &this->Projection);
-	this->ShaderInstance.SetUniformMat4("View", &this->View);
+	this->ShaderInstance.SetUniformMat4("Projection", Camera::GetPrespectiveMatrix());
+	this->ShaderInstance.SetUniformMat4("View", Camera::GetViewMatrix());
 
 	this->TextureInstance.BindTexture(0);
 
@@ -143,13 +130,6 @@ Cube::Cube() :
 	this->VertexArrayInstance.Buffer(VertexArray::ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, VertexArray::STATIC_DRAW);
 	this->VertexArrayInstance.Array(0, 3, 5, 0);
 	this->VertexArrayInstance.Array(1, 2, 5, 3);
-
-	// TODO: Remove this junk
-	// TODO: make proj mat a global
-
-
-	this->View = glm::mat4(1.0f);
-	this->View = glm::translate(this->View, glm::vec3(0.0f, 0.0f, -3.0f));
 }
 
 
@@ -163,15 +143,9 @@ void Cube::Draw() {
 	this->ShaderInstance.BindProgram();
 	this->ShaderInstance.SetUniformInt("TextureInstance", 0);
 
-	// TEMp
-	// TEMp
-	// TEMp
-	this->Projection;
-	this->Projection = glm::perspective(glm::radians(45.0f), (float)Renderer::SCRwidth / (float)Renderer::SCRheight, 0.1f, 100.0f);
-
 	this->ShaderInstance.SetUniformMat4("Transform", &this->Transform);
-	this->ShaderInstance.SetUniformMat4("Projection", &this->Projection);
-	this->ShaderInstance.SetUniformMat4("View", &this->View);
+	this->ShaderInstance.SetUniformMat4("Projection", Camera::GetPrespectiveMatrix());
+	this->ShaderInstance.SetUniformMat4("View", Camera::GetViewMatrix());
 
 	this->TextureInstance.BindTexture(0);
 	this->VertexArrayInstance.BindArray();

@@ -135,8 +135,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="game\GameObjects.cpp" />
-    <ClCompile Include="game\Scene.cpp" />
+    <ClCompile Include="Game\Camera.cpp" />
+    <ClCompile Include="Game\GameObjects.cpp" />
+    <ClCompile Include="Game\Scene.cpp" />
     <ClCompile Include="Glad.c" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Core\Renderer.cpp" />
@@ -146,8 +147,9 @@
     <ClCompile Include="Graphics\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game\GameObjects.hpp" />
-    <ClInclude Include="game\Scene.hpp" />
+    <ClInclude Include="Game\Camera.hpp" />
+    <ClInclude Include="Game\GameObjects.hpp" />
+    <ClInclude Include="Game\Scene.hpp" />
     <ClInclude Include="Main.hpp" />
     <ClInclude Include="Core\Renderer.hpp" />
     <ClInclude Include="Graphics\Shader.hpp" />

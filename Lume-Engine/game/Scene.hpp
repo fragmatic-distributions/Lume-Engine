@@ -1,12 +1,13 @@
 #include <iostream>
-#include <vector>
-
+#include <map>
+#include <GLFW/glfw3.h>
 #include "GameObjects.hpp"
 
 class Scene {
 public:
-	static std::vector<Quad*> Quads;
-	static std::vector<Cube*> Cubes;
+	static std::map<std::string, Quad*> Quads;
+	static std::map<std::string,Cube*> Cubes;
 
 	void Load();
+	void Tick(GLFWwindow* WindowInstance);
 };

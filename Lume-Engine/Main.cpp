@@ -54,6 +54,7 @@ int main()
 	while (!glfwWindowShouldClose(WindowInstance)) {
 		ProcessInput(WindowInstance);
 		Renderer::RenderFrame(WindowInstance);
+		GameScene.Tick(WindowInstance);
 	}
 
 	glfwTerminate();
