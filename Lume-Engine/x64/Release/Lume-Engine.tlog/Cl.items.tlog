@@ -1,10 +1,11 @@
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Game\Camera.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Camera.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Game\GameObjects.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\GameObjects.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Game\Scene.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Scene.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Glad.c;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Glad.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Main.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Main.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Core\Renderer.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Renderer.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Graphics\Shader.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Shader.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Graphics\Texture.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Texture.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Util.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\Util.obj
-C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\Graphics\VertexArray.cpp;C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\Lume-Engine\x64\Release\VertexArray.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Game\Camera.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Camera.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Game\GameObjects.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\GameObjects.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Game\Input.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Input.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Game\Scene.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Scene.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Glad.c;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Glad.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Main.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Main.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Core\Renderer.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Renderer.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Graphics\Shader.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Shader.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Graphics\Texture.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Texture.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Util.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\Util.obj
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Graphics\VertexArray.cpp;C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\x64\Release\VertexArray.obj

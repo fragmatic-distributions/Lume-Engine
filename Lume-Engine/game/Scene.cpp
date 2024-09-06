@@ -36,6 +36,4 @@ void Scene::Tick(GLFWwindow* WindowInstance) {
 	CubeMat2 = glm::rotate(CubeMat2, (float)glfwGetTime(), glm::vec3(1.0f, 0.0f, -2.0f));
 
 	Scene::Cubes["Cube01"]->SetTransform(CubeMat2);
-
-	Camera::UpdateCameraController(WindowInstance);
 }

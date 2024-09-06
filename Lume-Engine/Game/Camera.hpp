@@ -8,7 +8,6 @@ public:
 
 	static glm::mat4* GetViewMatrix();
 	static glm::mat4* GetPrespectiveMatrix();
-	static void UpdateCameraController(GLFWwindow* WindowInstance);
 private:
 
 	static glm::mat4 ViewMatrix;

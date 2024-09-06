@@ -3,12 +3,10 @@
 #include <iostream>
 
 #include "Main.hpp"
+#include "Game/Input.hpp"
 #include "Core/Renderer.hpp"
 #include "game/Scene.hpp"
 
-bool WireFrameState = false;
-bool WireFramePressed = false;
-void ProcessInput(GLFWwindow* WindowInstnace);
 
 // Main Stuff
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -36,6 +34,7 @@ int main()
 		return -2;
 	}
 	glfwMakeContextCurrent(WindowInstance);
+	glfwSetCursorPosCallback(WindowInstance, Input::CursorPosCallback);
 	glfwSetFramebufferSizeCallback(WindowInstance, FrameBufferSizeCallback); //  for screen sizing
 
 
@@ -48,36 +47,21 @@ int main()
 
 	glEnable(GL_DEPTH_TEST);
 
+	// Load the scene
 	Scene GameScene;
 	GameScene.Load();
+	// Init input
+	Input::setGLFWwindow(WindowInstance);
 	// Game Loop shit
 	while (!glfwWindowShouldClose(WindowInstance)) {
-		ProcessInput(WindowInstance);
 		Renderer::RenderFrame(WindowInstance);
-		GameScene.Tick(WindowInstance);
+		Input::ProcessInput(WindowInstance);
+		GameScene.Tick();
 	}
 
 	glfwTerminate();
 
 	return 0;
-}
-
-// Input Handling
-void ProcessInput(GLFWwindow* WindowInstnace) {
-	if (glfwGetKey(WindowInstnace, GLFW_KEY_F1) == GLFW_PRESS && !WireFramePressed) {
-		WireFramePressed = true;
-		if (!WireFrameState) {
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-			WireFrameState = true;
-		}
-		else {
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-			WireFrameState = false;
-		}
-	}
-	else if (glfwGetKey(WindowInstnace, GLFW_KEY_F1) == GLFW_RELEASE) {
-		WireFramePressed = false;
-	}
 }
 
 // Get Called when the screen size Changes

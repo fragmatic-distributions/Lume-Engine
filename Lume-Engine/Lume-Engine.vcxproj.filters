@@ -40,6 +40,7 @@
     <ClCompile Include="Game\GameObjects.cpp" />
     <ClCompile Include="Game\Scene.cpp" />
     <ClCompile Include="Game\Camera.cpp" />
+    <ClCompile Include="Game\Input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.hpp">
@@ -63,6 +64,7 @@
     <ClInclude Include="Game\GameObjects.hpp" />
     <ClInclude Include="Game\Scene.hpp" />
     <ClInclude Include="Game\Camera.hpp" />
+    <ClInclude Include="Game\Input.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\Default.vert">

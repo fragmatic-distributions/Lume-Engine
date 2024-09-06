@@ -23,29 +23,3 @@ glm::mat4* Camera::GetViewMatrix() {
 glm::mat4* Camera::GetPrespectiveMatrix() {
 	return &Camera::PrespectiveMatrix;
 }
-
-// Temporary Freeroam camera for beta renderer
-// Might have a use for it later...
-void Camera::UpdateCameraController(GLFWwindow* WindowInstance) {
-	SpatialVectors CameraLookVector = Util::GetSpatialVectors(Camera::GetViewMatrix());
-	glm::mat4 CameraDir = glm::mat4(1.0f);
-
-	float CameraSpeed = 0.01f;
-	if (glfwGetKey(WindowInstance, GLFW_KEY_W) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(CameraLookVector.FrontVector * CameraSpeed));
-	}
-	if (glfwGetKey(WindowInstance, GLFW_KEY_S) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(-CameraLookVector.FrontVector * CameraSpeed));
-	}
-	if (glfwGetKey(WindowInstance, GLFW_KEY_D) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(-CameraLookVector.RightVector * CameraSpeed));
-	}
-	if (glfwGetKey(WindowInstance, GLFW_KEY_A) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(CameraLookVector.RightVector * CameraSpeed));
-	}
-
-	glm::mat4 ViewMatrix = *Camera::GetViewMatrix();
-	ViewMatrix *= CameraDir;
-
-	Camera::SetViewMatrix(&ViewMatrix);
-}
