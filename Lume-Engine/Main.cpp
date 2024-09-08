@@ -36,7 +36,7 @@ int main()
 	glfwMakeContextCurrent(WindowInstance);
 	glfwSetCursorPosCallback(WindowInstance, Input::CursorPosCallback);
 	glfwSetFramebufferSizeCallback(WindowInstance, FrameBufferSizeCallback); //  for screen sizing
-
+	glfwSetInputMode(WindowInstance, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// Initalize Glad
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -56,7 +56,7 @@ int main()
 	while (!glfwWindowShouldClose(WindowInstance)) {
 		Renderer::RenderFrame(WindowInstance);
 		Input::ProcessInput(WindowInstance);
-		GameScene.Tick();
+		GameScene.Tick(WindowInstance);
 	}
 
 	glfwTerminate();

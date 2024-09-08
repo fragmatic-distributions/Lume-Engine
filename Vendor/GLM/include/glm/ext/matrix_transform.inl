@@ -21,6 +21,7 @@ namespace glm
 		T const c = cos(a);
 		T const s = sin(a);
 
+		
 		vec<3, T, Q> axis(normalize(v));
 		vec<3, T, Q> temp((T(1) - c) * axis);
 

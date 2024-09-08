@@ -1,12 +1,19 @@
 #include <glm/glm.hpp>
+#include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
+#include <algorithm>
 
 #include "Input.hpp"
-#include "../Util.hpp"
 #include "Camera.hpp"
+#include "../Util.hpp"
 
 bool WireFrameState = false;
 bool WireFramePressed = false;
+
+glm::vec2 PrevMousePosition = glm::vec2(0.0f);
+glm::vec2 SumMouseDeltaPosition = glm::vec2(0.0f);
+glm::vec3 CameraPosition = glm::vec3(0.0f);
+glm::vec3 RotationVector = glm::vec3(0.0f);
 
 void Input::setGLFWwindow(GLFWwindow* WindowInstance) {
 	Input::WindowInstance = WindowInstance;
@@ -37,31 +44,48 @@ void Input::ProcessInput(GLFWwindow* WindowInstance) {
 }
 
 void Input::CursorPosCallback(GLFWwindow* WindowInstance, double Xpos, double Ypos) {
+	float Fxpos = static_cast<float>(Xpos);
+	float Fypos = static_cast<float>(Ypos);
 
+	glm::vec2 MouseDelta = glm::vec2(Fxpos - PrevMousePosition.x, 
+								     Fypos - PrevMousePosition.y);
+	PrevMousePosition = glm::vec2(Fxpos, Fypos);
+
+	SumMouseDeltaPosition += MouseDelta;
+	SumMouseDeltaPosition = glm::vec2(SumMouseDeltaPosition.x, std::clamp(SumMouseDeltaPosition.y, -1000.0f, 1000.0f));
+
+	std::cout << SumMouseDeltaPosition.y << std::endl;
+
+	RotationVector = glm::vec3(SumMouseDeltaPosition.y * 0.1f, SumMouseDeltaPosition.x * 0.1f, 0.0f);
 }
 
 // Temporary Freeroam camera for beta renderer
 // Might have a use for it later...
 void Input::UpdateCameraController() {
 	SpatialVectors CameraLookVector = Util::GetSpatialVectors(Camera::GetViewMatrix());
-	glm::mat4 CameraDir = glm::mat4(1.0f);
 
+	glm::vec3 SumVectorDir = glm::vec3(0);
 	float CameraSpeed = 0.01f;
 	if (glfwGetKey(WindowInstance, GLFW_KEY_W) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(CameraLookVector.FrontVector * CameraSpeed));
+		SumVectorDir += CameraLookVector.FrontVector * CameraSpeed;
 	}
 	if (glfwGetKey(WindowInstance, GLFW_KEY_S) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(-CameraLookVector.FrontVector * CameraSpeed));
+		SumVectorDir += -CameraLookVector.FrontVector * CameraSpeed;
 	}
 	if (glfwGetKey(WindowInstance, GLFW_KEY_D) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(-CameraLookVector.RightVector * CameraSpeed));
+		SumVectorDir += -CameraLookVector.RightVector * CameraSpeed;
 	}
 	if (glfwGetKey(WindowInstance, GLFW_KEY_A) == GLFW_PRESS) {
-		CameraDir = glm::translate(CameraDir, glm::vec3(CameraLookVector.RightVector * CameraSpeed));
+		SumVectorDir += CameraLookVector.RightVector * CameraSpeed;
 	}
+	CameraPosition += SumVectorDir;
 
-	glm::mat4 ViewMatrix = *Camera::GetViewMatrix();
-	ViewMatrix *= CameraDir;
+	std::cout << RotationVector.x << RotationVector.y << std::endl;
+
+	glm::mat4 ViewMatrix = glm::mat4(1.0f);
+	ViewMatrix = glm::rotate(ViewMatrix, glm::radians(RotationVector.x), glm::vec3(1.0f, 0.0f, 0.0f));
+	ViewMatrix = glm::rotate(ViewMatrix, glm::radians(RotationVector.y), glm::vec3(0.0f, 1.0f, 0.0f));
+	ViewMatrix = glm::translate(ViewMatrix, CameraPosition);
 
 	Camera::SetViewMatrix(&ViewMatrix);
 }

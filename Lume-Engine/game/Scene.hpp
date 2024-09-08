@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <map>
 #include <GLFW/glfw3.h>
@@ -10,4 +12,5 @@ public:
 
 	void Load();
 	void Tick(GLFWwindow* WindowInstance);
+	void Destroy();
 };
