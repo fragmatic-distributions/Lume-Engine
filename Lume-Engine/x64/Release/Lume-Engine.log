@@ -1,7 +1,22 @@
-﻿  Input.cpp
+﻿  Scene.cpp
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Source\Graphics\Shader.hpp(10,14): warning C4091: 'static ': ignored on left of 'LumeShader::LumeShaderConfig' when no variable is declared
+  (compiling source file 'Source/Game/Scene.cpp')
+  
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Source\Graphics\Shader.hpp(40,14): warning C4091: 'static ': ignored on left of 'ShaderHelper::CompilerType' when no variable is declared
+  (compiling source file 'Source/Game/Scene.cpp')
+  
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Source\Graphics\Texture.hpp(7,14): warning C4091: 'static ': ignored on left of 'LumeTexture::ColorChannels' when no variable is declared
+  (compiling source file 'Source/Game/Scene.cpp')
+  
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Source\Graphics\VertexArray.hpp(9,14): warning C4091: 'static ': ignored on left of 'VertexArray::BufferType' when no variable is declared
+  (compiling source file 'Source/Game/Scene.cpp')
+  
+C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\Lume-Engine\Source\Graphics\VertexArray.hpp(14,14): warning C4091: 'static ': ignored on left of 'VertexArray::DrawMode' when no variable is declared
+  (compiling source file 'Source/Game/Scene.cpp')
+  
   Generating code
-  3 of 1194 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+  2 of 1563 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    15 functions had inline decision re-evaluated but remain unchanged
+    9 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Lume-Engine.vcxproj -> C:\Users\hugod\OneDrive\Documents\Fragmatic Projects\Lume-Engine\x64\Release\Lume-Engine.exe
+  Lume-Engine.vcxproj -> C:\Users\hugod\OneDrive\Documents\Projects\Lume-Engine\x64\Release\Lume-Engine.exe
